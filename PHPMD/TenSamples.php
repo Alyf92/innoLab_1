@@ -6,6 +6,7 @@ class Mistakes
 
     public function __construct()
     {
+        $a = 41;
     }
     public function mistake_1()
     {
@@ -65,7 +66,7 @@ class Mistakes
 
     public function mistake_4()
     {
-        $connection = new mysqli('servername', 'username', 'password');
+        $connection = new mysqli('localhost', 'root', '', 'userverwaltung');
         $models = [];
         $inputValues = array(1, 2, 3, 4, 5);
         foreach ($inputValues as $inputValue) {
@@ -75,22 +76,22 @@ class Mistakes
         $data = [];
         $ids = array(1, 2, 3, 4, 5);
         foreach ($ids as $id) {
-            $result = $connection->query("SELECT `x`, `y` FROM `values` WHERE `id` = " . $id);
+            $result = $connection->query("SELECT * FROM `users` WHERE `id` = " . $id);
             $data[] = $result->fetch_row();
         }
     }
 
     public function mistake_5()
     {
-        $connection = new mysqli('servername', 'username', 'password');
-        $res = $connection->query('SELECT `x`,`y` FROM `test` LIMIT 10000');
+        $connection = new mysqli('localhost', 'root', '', 'userverwaltung');
+        $res = $connection->query('SELECT * FROM `users` LIMIT 10000');
         echo "Limit 10000: " . memory_get_peak_usage() . "\n";
     }
 
     public function mistake_6()
     {
         $_POST['name'][0] = 'Schrödinger';
-        strlen($_POST['name']);
+        strlen($_POST['name'][0]);
     }
 
     public function mistake_7()

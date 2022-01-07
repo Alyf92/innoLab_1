@@ -1,0 +1,65 @@
+{
+  "name": "overtrue/phplint",
+  "description": "`phplint` is a tool that can speed up linting of php files by running several lint processes at once.",
+  "type": "library",
+  "keywords": [
+    "phplint",
+    "lint",
+    "syntax",
+    "check"
+  ],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "overtrue",
+      "email": "anzhengchao@gmail.com"
+    }
+  ],
+  "require": {
+    "php": ">=8.0",
+    "ext-json": "*",
+    "symfony/console": "^5.3.11",
+    "symfony/finder": "^5.3.7",
+    "symfony/process": "^5.3.12",
+    "symfony/yaml": "^5.3.11",
+    "n98/junit-xml": "1.1.0"
+  },
+  "require-dev": {
+    "jakub-onderka/php-console-highlighter": "^0.4",
+    "brainmaestro/composer-git-hooks": "^2.8.5",
+    "friendsofphp/php-cs-fixer": "^3.3.2"
+  },
+  "autoload": {
+    "psr-4": {
+      "Overtrue\\PHPLint\\": "src/"
+    }
+  },
+  "extra": {
+    "hooks": {
+      "pre-commit": [
+        "composer fix-style"
+      ]
+    }
+  },
+  "scripts": {
+    "post-update-cmd": [
+      "cghooks update"
+    ],
+    "post-merge": "composer install",
+    "post-install-cmd": [
+      "cghooks add --ignore-lock",
+      "cghooks update"
+    ],
+    "cghooks": "vendor/bin/cghooks",
+    "check-style": "php-cs-fixer fix --using-cache=no --diff --dry-run --ansi",
+    "fix-style": "php-cs-fixer fix --using-cache=no --ansi",
+    "lint:syntax": "./bin/phplint --ansi"
+  },
+  "scripts-descriptions": {
+    "check-style": "Run style checks (only dry run - no fixing!).",
+    "fix-style": "Run style checks and fix violations."
+  },
+  "bin": [
+    "bin/phplint"
+  ]
+}
