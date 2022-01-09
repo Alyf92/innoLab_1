@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<testsuites>
-  <testsuite name="PHP Linter" timestamp="2022-01-06T21:51:09+0100" time="&lt; 1 sec" tests="1">
-    <testcase errors="0" failures="0"/>
-  </testsuite>
-</testsuites>

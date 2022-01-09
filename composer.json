@@ -1,0 +1,13 @@
+{
+    "require-dev": {
+        "overtrue/phplint": "4.0",
+        "phpmd/phpmd": "^2.11",
+        "friendsofphp/php-cs-fixer": "^3.4"
+    },
+    
+    "scripts": {
+        "lint": "phplint --xml result/PHPLint_Result.xml --no-cache  src",
+        "phpmd": "phpmd ./src/TenSamples.php html ruleset.xml --reportfile ./result/PHPMD_Result.php",
+        "phpcs": "vendor/bin/php-cs-fixer fix src"
+    }
+}
