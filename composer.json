@@ -6,8 +6,8 @@
     },
     
     "scripts": {
-        "lint": "phplint --xml result/PHPLint_Result.xml --no-cache  src",
-        "phpmd": "phpmd ./src/TenSamples.php html ruleset.xml --reportfile ./result/PHPMD_Result.php",
-        "phpcs": "vendor/bin/php-cs-fixer fix src"
+        "phplint": "phplint",
+        "phpmd": "phpmd src/TenSamples.php html ruleset.xml --reportfile result/PHPMD_Result.php",
+        "phpcs": "vendor/bin/php-cs-fixer fix src --rules=@Symfony,-@PSR1,-blank_line_before_statement,strict_comparison --dry-run --allow-risky yes --format xml  --using-cache no --verbose --show-progress=dots"
     }
 }

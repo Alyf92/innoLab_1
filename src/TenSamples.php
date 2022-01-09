@@ -3,6 +3,7 @@
 
 class Mistakes
 {
+
     public function __construct()
     {
         $a = 41;
@@ -111,12 +112,12 @@ class Mistakes
 
     public function mistake_9()
     {
-        //The main problem in this code is that the user-submitted value
-        //($_GET['query']) is output directly to the page,
+        //The main problem in this code is that the user-submitted value 
+        //($_GET['query']) is output directly to the page, 
         //resulting in a Cross Site Scripting (XSS) vulnerability.
-        echo("<p>Search results for query: " .
+        echo ("<p>Search results for query: " .
             $_GET['query'] . ".</p>");
-        echo("<p>Search results for query: " .
+        echo ("<p>Search results for query: " .
             htmlspecialchars($_GET['query']) . ".</p>");
     }
 
@@ -124,7 +125,7 @@ class Mistakes
     {
         // PHP 5.0 or later:
         $array = [];
-        var_dump(empty($array));        // outputs bool(true)
+        var_dump(empty($array));        // outputs bool(true) 
         $array = new ArrayObject();
         var_dump(empty($array));        // outputs bool(false)
         // why don't these both produce the same output?F
