@@ -4,9 +4,8 @@
         "phpmd/phpmd": "^2.11",
         "friendsofphp/php-cs-fixer": "^3.4"
     },
-    
     "scripts": {
-        "phplint": "phplint",
+        "phplint": "phplint src --extensions=php --xml=result/PHPLint_Result.xml --warning --verbose",
         "phpmd": "phpmd src/TenSamples.php html ruleset.xml --reportfile result/PHPMD_Result.php",
         "phpcs": "vendor/bin/php-cs-fixer fix src --rules=@Symfony,-@PSR1,-blank_line_before_statement,strict_comparison --dry-run --allow-risky yes --format xml  --using-cache no --verbose --show-progress=dots"
     }

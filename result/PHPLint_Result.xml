@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testsuites>
-  <testsuite name="PHP Linter" timestamp="2022-01-09T21:18:16+0100" time="&lt; 1 sec" tests="1" errors="1">
+  <testsuite name="PHP Linter" timestamp="2022-01-12T02:32:36+0100" time="&lt; 1 sec" tests="1" errors="1">
     <testcase errors="1" failures="0">
-      <error type="Error" message="unexpected end of file, expecting &quot;,&quot; or &quot;;&quot; in line 5">C:\xampp\htdocs\WS2021\innoLab_1\src\TenSamples.php</error>
+      <error type="Error" message="unexpected token &quot;}&quot; in line 10">C:\xampp\htdocs\WS2021\innoLab_1\src\TenSamples.php</error>
     </testcase>
   </testsuite>
 </testsuites>
