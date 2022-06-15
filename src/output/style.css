@@ -1,0 +1,29 @@
+
+h1 {
+    font-weight: bold;
+    color: rgb(139,179,29);
+}
+
+
+.row {
+    /*border-bottom: 1px solid white;*/
+    padding: 0.75rem;
+    border-top: 1px solid #dee2e6;
+
+}
+
+.odd {
+    background-color: #fff;
+}
+
+.even {
+    background-color: rgba(114,120,122,0.1);
+}
+
+.linter,.lineBegin {
+    font-weight: bold;
+}
+
+.lineBegin::before {
+    content: "- Line: ";
+}
