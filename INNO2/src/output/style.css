@@ -9,11 +9,11 @@ h1 {
     border-top: 1px solid #dee2e6;
 }
 
-.odd {
+.row:nth-of-type(odd) {
     background-color: #fff;
 }
 
-.even {
+.row:nth-of-type(even) {
     background-color: rgba(114,120,122,0.1);
 }
 

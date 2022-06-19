@@ -35,12 +35,17 @@ for key in _result['files'].keys():
 
 # generate html results
 with document(title='LINT Result') as doc:
-    h1('Results')
+    with doc.head:
+        meta(charset="utf-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1")
+        link(rel='stylesheet', href='style.css')
+        link( rel="stylesheet", href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css", integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2", crossorigin="anonymous")
+    h1('Results' , _class="container")
     # for every reported file
     for _file in result.keys():
         file = result[_file]
         file.sort(key=lambda x: x['line'])
-        d = [h2(_file)]
+        d = [h5("Linted File:  " , _file)]
         prev = False
         # for every reported violation
         for violation in file:
@@ -51,11 +56,11 @@ with document(title='LINT Result') as doc:
                     div([\
                         span(violation['linter'], _class='linter'),\
                         span(violation['line'], _class='lineBegin')
-                    ]),\
+                    ], _class='col-md-6'),\
                     div([\
                         span(violation['message'], _class='content')\
-                    ])\
-                ])\
+                    ], _class='col-md-6')\
+                ], _class='row')\
             )
             # legacy system
             #d.append(\
@@ -76,7 +81,7 @@ with document(title='LINT Result') as doc:
             #        ], _class='violation')\
             #    ], _class='fullViolation')\
             #)
-        div(d, _class='file')
+        div(d, _class='container')
 
 # write result to file
 with open('output/out.html', 'w') as f:
