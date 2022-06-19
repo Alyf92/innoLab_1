@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<report>
+  <files>
+    <file id="1" name="innoLab_1\src\TenSamples.php">
+      <applied_fixers>
+        <applied_fixer name="class_attributes_separation"/>    
+        <applied_fixer name="no_unneeded_control_parentheses"/>
+        <applied_fixer name="array_syntax"/>
+        <applied_fixer name="concat_space"/>
+        <applied_fixer name="increment_style"/>
+        <applied_fixer name="single_quote"/>
+        <applied_fixer name="no_trailing_whitespace"/>
+        <applied_fixer name="no_extra_blank_lines"/>
+      </applied_fixers>
+    </file>
+  </files>
+  <time unit="s">
+    <total value="0.093"/>
+  </time>
+  <memory value="12" unit="MB"/>
+</report>

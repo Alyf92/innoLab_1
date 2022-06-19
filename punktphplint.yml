@@ -1,8 +1,0 @@
-path: src
-jobs: 10
-cache: no-cache
-extensions:
-  - php
-warning: true
-xml: result/PHPLint_Result.xml
-verbose: true
